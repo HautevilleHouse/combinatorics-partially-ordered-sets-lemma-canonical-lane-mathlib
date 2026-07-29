@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CombinatoricsPartiallyOrderedSetsLemmaCanonicalLaneLean.DilworthTheorem
+import HautevilleHouse.CombinatoricsPartiallyOrderedSetsLemmaCanonicalLaneLean.MirskysTheorem
+import HautevilleHouse.CombinatoricsPartiallyOrderedSetsLemmaCanonicalLaneLean.SpernerTheorem
+
+namespace HautevilleHouse
+namespace CombinatoricsPartiallyOrderedSetsLemmaCanonicalLaneLean
+
+def ConstrainedPartiallyOrderedSetsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_partially_ordered_sets_endgame (A : AdmissibleClass) : ConstrainedPartiallyOrderedSetsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CombinatoricsPartiallyOrderedSetsLemmaCanonicalLaneLean
+end HautevilleHouse
